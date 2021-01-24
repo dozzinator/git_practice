@@ -3,17 +3,21 @@ console.log(start);
 
 var buyOrSell = ['Buy', 'Sell'];
 var objects = ['ticket(s)', 'phone(s)', 'car(s)', 'laptop(s)'];
-var randomNumber = Math.floor(Math.random() * 10 + 1); 
 var time = ['this morning', 'this afternoon', 'tonight'];
-var randomBuyOrSell = buyOrSell[Math.floor(Math.random() * buyOrSell.length)];
-var randomObjects = objects[Math.floor(Math.random() * objects.length)];
-var randomTime = time[Math.floor(Math.random() * time.length)];
+var randomNumber = Math.floor(Math.random() * 10 + 1); 
 
-function messageCreator (randomBuyOrSell, randomObjects, randomNumber, randomTime) {
+function randomSelection(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+};
+
+function messageCreator() {
+    randomBuyOrSell = randomSelection(buyOrSell);
+    randomObjects = randomSelection(objects);
+    randomTime = randomSelection(time);
     console.log('Hello, your assignment for today is: ' + randomBuyOrSell + ' ' + randomNumber + ' ' + randomObjects + ' ' + randomTime + '!')
 };
 
-messageCreator(randomBuyOrSell, randomObjects, randomNumber, randomTime);
+messageCreator();
 
 
 //-- "Buy or Sell"
